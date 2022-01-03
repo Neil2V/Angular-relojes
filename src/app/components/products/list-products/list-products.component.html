@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="container">
+  <table class="table ">
+    <thead class="table-secondary">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody class="table-info" *ngFor="let product of products" >
+      <tr>
+        <th scope="row">{{ product.id }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | currency}}</td>
+        <td>
+            <button class="btn btn-primary" routerLink="/detail/{{product.id}}"><i class="fas fa-eye"></i></button>
+            <button *ngIf="isAdmin" class="btn btn-danger" routerLink="/edit/{{product.id}}" ><i class="fas fa-pen-square"></i></button>
+            <button *ngIf="isAdmin" class="btn btn-warning" (click)="deleteProduct(product.id)"><i class="fas fa-trash-alt"></i></button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <div class="mt-3">
+    <div *ngIf="isAdmin" class="btn btn-success btn-lg" routerLink="/new">
+      Add
+    </div>
+  </div>
+</div>
+  

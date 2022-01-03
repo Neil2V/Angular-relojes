@@ -1,0 +1,5 @@
+<app-header></app-header>
+<div class="container text-center">
+    <div *ngIf="isLogged; else logOut">Bienvenido {{username}}</div>
+    <ng-template #logOut><h2>No has iniciado sesion</h2></ng-template>
+</div>

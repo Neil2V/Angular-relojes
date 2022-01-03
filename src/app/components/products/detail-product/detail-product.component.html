@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row mt-5" *ngIf="product">
+        <div class="col-md4 mx-auto">
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-header">
+                  Detail Product
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Id: {{product.id}}</li>
+                  <li class="list-group-item">Name: {{product.name}}</li>
+                  <li class="list-group-item">Price: {{product.price | currency}}</li>
+                </ul>
+                <div class="card-footer">
+                  <div class="btn btn-primary btn-block" (click)="back()">
+                    <i class="fad fa-backward"></i> Volver
+                  </div>
+                </div>
+           </div>
+        </div>
+    </div>
+    
+</div>

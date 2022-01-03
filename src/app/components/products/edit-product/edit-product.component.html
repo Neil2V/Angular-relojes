@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row mt-5" *ngIf="product">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="editProduct()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" class="form-control" id="name" name="name" 
+                    [(ngModel)]="product.name" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price: </label>
+                    <input type="number" class="form-control" id="price" name="price" 
+                    [(ngModel)]="product.price" required>
+                </div>
+                <button class="btn btn-success btn-block" [disabled]="!f.valid">Update product</button>
+                <button class="btn btn-primary btn-block" (click)="back()">
+                    <i class="fad fa-backward"></i> Volver
+                </button>
+            
+            </form>
+        </div>
+    </div>
+    
+</div>
