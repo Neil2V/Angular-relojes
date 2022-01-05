@@ -6,7 +6,7 @@
 /out-tsc
 # Only exists if Bazel was run
 /bazel-out
-/.firebase
+/.firebase/hosting.ZGlzdFxBbmd1bGFyLXNwcmluZy1mcm9udA.cache
 
 # dependencies
 /node_modules
