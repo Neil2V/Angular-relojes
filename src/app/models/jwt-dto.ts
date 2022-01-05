@@ -1,6 +1,6 @@
 export class JwtDto {
     token: string;
-    bearem: string;
+    bearer: string;
     username: string;
     authorities: string[];
 

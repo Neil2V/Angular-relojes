@@ -27,11 +27,11 @@ export class NewProductComponent implements OnInit {
     const product = new Product(this.name, this.price);
     this.productService.createProduct(product).subscribe(
         data => {
-          this.toastr.success('Created product', 'Ok!',{
+          this.toastr.success('Brand registered', 'Ok!',{
             timeOut: 3000,
             positionClass: 'toast-top-center'
           });
-          this.router.navigate(['/']);
+          this.router.navigate(['/list']);
         },
         err => {
           this.toastr.error(err.error.message, 'Fail!',{

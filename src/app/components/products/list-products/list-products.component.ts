@@ -45,7 +45,7 @@ export class ListProductsComponent implements OnInit {
   deleteProduct(id: number): void{
     this.productService.deleteProduct(id).subscribe(
       data => {
-        this.toastr.success('Deleted product', 'Ok!',{
+        this.toastr.success('Deleted clock', 'Ok!',{
           timeOut: 3000,
           positionClass: 'toast-top-center'
         });
