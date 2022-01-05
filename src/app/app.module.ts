@@ -19,6 +19,8 @@ import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { interceptorProvider } from './interceptors/prod-interceptors.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,13 @@ import { interceptorProvider } from './interceptors/prod-interceptors.service';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]

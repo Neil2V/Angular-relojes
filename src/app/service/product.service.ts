@@ -8,7 +8,7 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  productUrl = 'http://localhost:8081/product/';
+  productUrl = 'https://clocks-collections.herokuapp.com/product/';
 
   constructor(
     private httpCliente : HttpClient

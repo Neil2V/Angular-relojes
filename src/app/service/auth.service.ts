@@ -10,7 +10,7 @@ import { NewUser } from '../models/new-user';
 })
 export class AuthService {
 
-  authUrl = 'http://localhost:8081/auth/'
+  authUrl = 'https://clocks-collections.herokuapp.com/auth/';
 
   constructor(
     private http : HttpClient
